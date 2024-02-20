@@ -53,8 +53,8 @@ def main(arg):
             predictPrice = predictPrice * price_std + price_mean
         if predictPrice < 0:
             predictPrice = 0
-            print("Attention: le prix prédit est négatif votre voiture est une poubelle") 
-        print("Pour", arg, "km, le prix estimé est de", predictPrice, "€")
+            print("Warning: The predicted price is negative, it has been set to 0.0€. Your car is a trash or a time machine.") 
+        print("For", arg, "km the predicted price is", predictPrice, "€")
 
         # Plot the graph
         plt.title("Prix en fonction du kilometrage")
