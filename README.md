@@ -14,8 +14,8 @@ The aim of this project is to introduce you to the basic concept behind machine 
 - Machine Learning
 
 ## Usage
-python3 gradient_descent.py
-python3 linear_regression.py
+- python3 gradient_descent.py
+- python3 linear_regression.py integer positive (the km you want)
 
 ## Authors
 - vbarbier
