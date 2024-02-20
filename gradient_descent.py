@@ -34,6 +34,7 @@ def main():
 		theta = [0, 0]
 		for i in range(0, 100):
 			theta = define_theta(km_normalized, price_normalized, theta, 0.1)
+			# print(i, theta)
 			
 		with open('theta.csv', 'w') as file:
 			writer = csv.writer(file)

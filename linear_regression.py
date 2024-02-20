@@ -37,7 +37,6 @@ def main(arg):
         price= []
 
         for row in data:
-            # print(row['km'], row['price'])
             km.append(float(row[0]))
             price.append(float(row[1]))
 
