@@ -53,7 +53,8 @@ def main(arg):
             predictPrice = predictPrice * price_std + price_mean
         if predictPrice < 0:
             predictPrice = 0
-            print("Warning: The predicted price is negative, it has been set to 0.0€. Your car is a trash or a time machine.") 
+            print("Warning: The predicted price is negative, it has been set to 0.0€. Your car is a trash or a time machine.")
+            return
         print("For", arg, "km the predicted price is", predictPrice, "€")
 
         # Plot the graph

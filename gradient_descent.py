@@ -1,6 +1,5 @@
 import csv
 import numpy as np
-import matplotlib.pyplot as plt
 
 def estimatePrice(km, theta0, theta1):
     return theta0 + theta1 * km
@@ -12,6 +11,9 @@ def define_theta(km, price, theta, learningRate):
 
 def normalization(array):
 	return (array - np.mean(array)) / np.std(array)
+
+def denormalization(array, mean, std):
+	return array * std + mean
 
 def main():
 	with open('data.csv', 'r') as file:
@@ -31,14 +33,26 @@ def main():
 		km_normalized = normalization(km)
 		price_normalized = normalization(price)
 
+		tab_cost = []
 		theta = [0, 0]
-		for i in range(0, 100):
+		for _ in range(0, 50):
 			theta = define_theta(km_normalized, price_normalized, theta, 0.1)
-			# print(i, theta)
+
+			# Calculate the cost MSE precision
+			denorm_eP = denormalization(estimatePrice(km_normalized, theta[0], theta[1]), np.mean(price), np.std(price))
+			cost = np.mean((np.sum((price - denorm_eP)**2))) / len(price)
+			cost = np.sqrt(cost)
+			tab_cost = np.append(tab_cost, cost)
+
 			
 		with open('theta.csv', 'w') as file:
 			writer = csv.writer(file)
 			writer.writerow(theta)
+
+		with open('cost.csv', 'w') as file:
+			writer = csv.writer(file)
+			for i in range(len(tab_cost)):
+				writer.writerow([tab_cost[i]])
 
 if __name__ == "__main__":
 	main()

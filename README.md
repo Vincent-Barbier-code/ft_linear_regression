@@ -7,6 +7,7 @@ The aim of this project is to introduce you to the basic concept behind machine 
 ## Objectives
 - Linear regression
 - Gradient descent
+- Precision
 
 ## Skills
 - Algorithms & AI
@@ -14,8 +15,9 @@ The aim of this project is to introduce you to the basic concept behind machine 
 - Machine Learning
 
 ## Usage
-- python3 gradient_descent.py
-- python3 linear_regression.py integer positive (the km you want)
+- python gradient_descent.py
+- python linear_regression.py integer positive (the km you want)
+- python precision.py
 
 ## Authors
 - vbarbier
