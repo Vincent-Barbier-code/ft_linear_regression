@@ -35,7 +35,7 @@ def main():
 
 		tab_cost = []
 		theta = [0, 0]
-		for _ in range(0, 10):
+		for _ in range(0, 50):
 			theta = define_theta(km_normalized, price_normalized, theta, 0.1)
 
 			# Calculate the cost MSE precision
